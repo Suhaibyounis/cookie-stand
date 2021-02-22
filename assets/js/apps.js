@@ -1,21 +1,33 @@
 'use strict'
 
-let workingHours = ['6am', '7am', '8am', '9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm', 'Total'];
+let workingHours = ['6am', '7am', '8am', '9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 // Seattle
 const Seattle = {
     City: 'Seattle',
     minCust: 23,
     maxCust: 65,
-    numOfCookies: [], 
+    numOfCookies: [],
+    custPerHour :[],
     avgCookies: 6.3,
-    getNumOfCookies: function(minCust, maxCust){
-        for (let i = 0; i < (workingHours.length - 1 ); i++) {
-            this.numOfCookies.push(parseInt(generateRandomNumber(this.minCust, this.maxCust) * this.avgCookies)) ;
+    total : 0,
+    getNumOfCookies: function(){
+        for (let i = 0; i < workingHours.length; i++) {
+            let cookie = Math.ceil(generateRandomNumber(this.minCust, this.maxCust) * this.avgCookies);
+            this.numOfCookies.push(cookie);
+            this.total = this.total + cookie;
         }
-        let total = this.numOfCookies[0] + this.numOfCookies[1] + this.numOfCookies[2] +this.numOfCookies[3] +this.numOfCookies[4] +this.numOfCookies[5] +this.numOfCookies[6] +this.numOfCookies[7] +this.numOfCookies[8] +this.numOfCookies[9] +this.numOfCookies[10] +this.numOfCookies[11] +this.numOfCookies[12] +this.numOfCookies[13]; 
-        this.numOfCookies.push(total);
+        
     },
-    render: function() {
+
+    getCustPerHour: function(){
+        for (let i = 0; i < workingHours.length; i++) {
+            let custmer = generateRandomNumber(this.minCust, this.maxCust) ;
+            this.custPerHour.push(custmer);
+     }
+    },
+
+
+    render: function(){
     const parentElement = document.getElementById('salesInfo');
     
     const articleElement = document.createElement('article');
@@ -32,29 +44,45 @@ const Seattle = {
         ulElement.appendChild(liElement);
         liElement.textContent = workingHours[i] + ': ' + this.numOfCookies[i] + '.'; 
     }
-}
+    const liElement = document.createElement('li');
+    ulElement.appendChild(liElement);
+    liElement.textContent = `Total : ${this.total} cookies`;
+    }
 };
 Seattle.getNumOfCookies();
+Seattle.getCustPerHour();
 Seattle.render();
 console.log(Seattle.numOfCookies);
 
 ///
-// Tokyo
+//Tokyo
 
 const Tokyo = {
     City: 'Tokyo',
     minCust: 3,
     maxCust: 24,
-    numOfCookies: [], 
+    numOfCookies: [],
+    custPerHour :[],
     avgCookies: 1.2,
-    getNumOfCookies: function(minCust, maxCust){
-        for (let i = 0; i < (workingHours.length - 1 ); i++) {
-            this.numOfCookies.push(parseInt(generateRandomNumber(this.minCust, this.maxCust) * this.avgCookies)) ;
+    total : 0,
+    getNumOfCookies: function(){
+        for (let i = 0; i < workingHours.length; i++) {
+            let cookie = Math.ceil(generateRandomNumber(this.minCust, this.maxCust) * this.avgCookies);
+            this.numOfCookies.push(cookie);
+            this.total = this.total + cookie;
         }
-        let total = this.numOfCookies[0] + this.numOfCookies[1] + this.numOfCookies[2] +this.numOfCookies[3] +this.numOfCookies[4] +this.numOfCookies[5] +this.numOfCookies[6] +this.numOfCookies[7] +this.numOfCookies[8] +this.numOfCookies[9] +this.numOfCookies[10] +this.numOfCookies[11] +this.numOfCookies[12] +this.numOfCookies[13]; 
-        this.numOfCookies.push(total);
+        
     },
-    render: function() {
+
+    getCustPerHour: function(){
+        for (let i = 0; i < workingHours.length; i++) {
+            let custmer = generateRandomNumber(this.minCust, this.maxCust) ;
+            this.custPerHour.push(custmer);
+     }
+    },
+
+
+    render: function(){
     const parentElement = document.getElementById('salesInfo');
     
     const articleElement = document.createElement('article');
@@ -71,29 +99,45 @@ const Tokyo = {
         ulElement.appendChild(liElement);
         liElement.textContent = workingHours[i] + ': ' + this.numOfCookies[i] + '.'; 
     }
-}
+    const liElement = document.createElement('li');
+    ulElement.appendChild(liElement);
+    liElement.textContent = `Total : ${this.total} cookies`;
+    }
 };
 Tokyo.getNumOfCookies();
+Tokyo.getCustPerHour();
 Tokyo.render();
 console.log(Tokyo.numOfCookies);
 
-///
 
-// Dubai
+///
+//Dubai
 const Dubai = {
     City: 'Dubai',
     minCust: 11,
     maxCust: 38,
-    numOfCookies: [], 
+    numOfCookies: [],
+    custPerHour :[],
     avgCookies: 3.7,
-    getNumOfCookies: function(minCust, maxCust){
-        for (let i = 0; i < (workingHours.length - 1 ); i++) {
-            this.numOfCookies.push(parseInt(generateRandomNumber(this.minCust, this.maxCust) * this.avgCookies)) ;
+    total : 0,
+    getNumOfCookies: function(){
+        for (let i = 0; i < workingHours.length; i++) {
+            let cookie = Math.ceil(generateRandomNumber(this.minCust, this.maxCust) * this.avgCookies);
+            this.numOfCookies.push(cookie);
+            this.total = this.total + cookie;
         }
-        let total = this.numOfCookies[0] + this.numOfCookies[1] + this.numOfCookies[2] +this.numOfCookies[3] +this.numOfCookies[4] +this.numOfCookies[5] +this.numOfCookies[6] +this.numOfCookies[7] +this.numOfCookies[8] +this.numOfCookies[9] +this.numOfCookies[10] +this.numOfCookies[11] +this.numOfCookies[12] +this.numOfCookies[13]; 
-        this.numOfCookies.push(total);
+        
     },
-    render: function() {
+
+    getCustPerHour: function(){
+        for (let i = 0; i < workingHours.length; i++) {
+            let custmer = generateRandomNumber(this.minCust, this.maxCust) ;
+            this.custPerHour.push(custmer);
+     }
+    },
+
+
+    render: function(){
     const parentElement = document.getElementById('salesInfo');
     
     const articleElement = document.createElement('article');
@@ -110,29 +154,45 @@ const Dubai = {
         ulElement.appendChild(liElement);
         liElement.textContent = workingHours[i] + ': ' + this.numOfCookies[i] + '.'; 
     }
-}
+    const liElement = document.createElement('li');
+    ulElement.appendChild(liElement);
+    liElement.textContent = `Total : ${this.total} cookies`;
+    }
 };
 Dubai.getNumOfCookies();
+Dubai.getCustPerHour();
 Dubai.render();
 console.log(Dubai.numOfCookies);
 
 ///
+//Paris
 
-// Paris
 const Paris = {
     City: 'Paris',
     minCust: 20,
     maxCust: 38,
-    numOfCookies: [], 
+    numOfCookies: [],
+    custPerHour :[],
     avgCookies: 2.3,
-    getNumOfCookies: function(minCust, maxCust){
-        for (let i = 0; i < (workingHours.length - 1 ); i++) {
-            this.numOfCookies.push(parseInt(generateRandomNumber(this.minCust, this.maxCust) * this.avgCookies)) ;
+    total : 0,
+    getNumOfCookies: function(){
+        for (let i = 0; i < workingHours.length; i++) {
+            let cookie = Math.ceil(generateRandomNumber(this.minCust, this.maxCust) * this.avgCookies);
+            this.numOfCookies.push(cookie);
+            this.total = this.total + cookie;
         }
-        let total = this.numOfCookies[0] + this.numOfCookies[1] + this.numOfCookies[2] +this.numOfCookies[3] +this.numOfCookies[4] +this.numOfCookies[5] +this.numOfCookies[6] +this.numOfCookies[7] +this.numOfCookies[8] +this.numOfCookies[9] +this.numOfCookies[10] +this.numOfCookies[11] +this.numOfCookies[12] +this.numOfCookies[13]; 
-        this.numOfCookies.push(total);
+        
     },
-    render: function() {
+
+    getCustPerHour: function(){
+        for (let i = 0; i < workingHours.length; i++) {
+            let custmer = generateRandomNumber(this.minCust, this.maxCust) ;
+            this.custPerHour.push(custmer);
+     }
+    },
+
+
+    render: function(){
     const parentElement = document.getElementById('salesInfo');
     
     const articleElement = document.createElement('article');
@@ -149,30 +209,44 @@ const Paris = {
         ulElement.appendChild(liElement);
         liElement.textContent = workingHours[i] + ': ' + this.numOfCookies[i] + '.'; 
     }
-}
+    const liElement = document.createElement('li');
+    ulElement.appendChild(liElement);
+    liElement.textContent = `Total : ${this.total} cookies`;
+    }
 };
 Paris.getNumOfCookies();
+Paris.getCustPerHour();
 Paris.render();
 console.log(Paris.numOfCookies);
 
-
 ///
-
-// Lima
+//Lima
 const Lima = {
     City: 'Lima',
     minCust: 2,
     maxCust: 16,
-    numOfCookies: [], 
+    numOfCookies: [],
+    custPerHour :[],
     avgCookies: 4.6,
-    getNumOfCookies: function(minCust, maxCust){
-        for (let i = 0; i < (workingHours.length - 1 ); i++) {
-            this.numOfCookies.push(parseInt(generateRandomNumber(this.minCust, this.maxCust) * this.avgCookies)) ;
+    total : 0,
+    getNumOfCookies: function(){
+        for (let i = 0; i < workingHours.length; i++) {
+            let cookie = Math.ceil(generateRandomNumber(this.minCust, this.maxCust) * this.avgCookies);
+            this.numOfCookies.push(cookie);
+            this.total = this.total + cookie;
         }
-        let total = this.numOfCookies[0] + this.numOfCookies[1] + this.numOfCookies[2] +this.numOfCookies[3] +this.numOfCookies[4] +this.numOfCookies[5] +this.numOfCookies[6] +this.numOfCookies[7] +this.numOfCookies[8] +this.numOfCookies[9] +this.numOfCookies[10] +this.numOfCookies[11] +this.numOfCookies[12] +this.numOfCookies[13]; 
-        this.numOfCookies.push(total);
+        
     },
-    render: function() {
+
+    getCustPerHour: function(){
+        for (let i = 0; i < workingHours.length; i++) {
+            let custmer = generateRandomNumber(this.minCust, this.maxCust) ;
+            this.custPerHour.push(custmer);
+     }
+    },
+
+
+    render: function(){
     const parentElement = document.getElementById('salesInfo');
     
     const articleElement = document.createElement('article');
@@ -189,13 +263,20 @@ const Lima = {
         ulElement.appendChild(liElement);
         liElement.textContent = workingHours[i] + ': ' + this.numOfCookies[i] + '.'; 
     }
-}
+    const liElement = document.createElement('li');
+    ulElement.appendChild(liElement);
+    liElement.textContent = `Total : ${this.total} cookies`;
+    }
 };
 Lima.getNumOfCookies();
+Lima.getCustPerHour();
 Lima.render();
 console.log(Lima.numOfCookies);
+
+///
 
 
 function generateRandomNumber(minCust, maxCust) {
     return Math.ceil(Math.random() * (maxCust - minCust + 1) + minCust) ; 
   }
+  
