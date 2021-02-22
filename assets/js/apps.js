@@ -155,33 +155,36 @@ SalmonStand.prototype.render = function(){
     rowElement.appendChild(thElement);
     thElement.textContent = this.total; 
 
-
-    //FooterFunction
-    
-    function tableFooter(){
-
-        const trElement = document.createElement( 'tr' );
-        trfootElement.appendChild( trElement );
-        const th21Element = document.createElement( 'th' );
-        trElement.appendChild( th21Element );
-        th21Element.textContent = 'total';
-        //
-        for( let i = 0; i < workingHours.length; i++ ){
-          const thElement = document.createElement( 'th' );
-          trElement.appendChild( thElement );
-          thElement.textContent = seattle.numOfCookies[i] + tokyo.numOfCookies[i] + dubai.numOfCookies[i]
-           + paris.numOfCookies[i] + lima.numOfCookies[i];
-        }
-        // calculate the total of the Daily Location Total
-        for ( let i = 0; i < dailyLocationTotal.length; i++ ) {
-          total += dailyLocationTotal[i];
-        }
-        const th23Element = document.createElement( 'th' );
-        trElement.appendChild( th23Element );
-        th23Element.textContent = total;
-      }
+  
     
 };
+
+ //FooterFunction
+    
+ function footerOfTable (){
+
+    const tr8Element = document.createElement('tr');
+    tableElement.appendChild(tr8Element);
+
+    const th21Element = document.createElement('th');
+    tr8Element.appendChild( th21Element );
+    th21Element.textContent = 'total';
+    //
+    for( let i = 0; i < workingHours.length; i++ ){
+      const th20Element = document.createElement('th');
+      tr8Element.appendChild( th20Element );
+      th20Element.textContent = Seattle.numOfCookies[i] + Tokyo.numOfCookies[i] + Dubai.numOfCookies[i]
+       + Paris.numOfCookies[i] + Lima.numOfCookies[i];
+    }
+    // calculate the total of the Daily Location Total
+    let totals = 0;
+    for ( let i = 0; i < dailyLocationTotal.length; i++){
+      totals += dailyLocationTotal[i];
+    }
+    const th23Element = document.createElement('th');
+    tr8Element.appendChild( th23Element );
+    th23Element.textContent = totals;
+  }
 
  
 const Seattle = new SalmonStand('Seattle', 23, 65,'6.3');
@@ -221,7 +224,10 @@ console.log(Dubai);
 console.log(Paris);
 console.log(Lima);
 
-tableFooter();
+
+
+
+footerOfTable();
 
 function generateRandomNumber(minCust, maxCust) {
     return Math.ceil(Math.random() * (maxCust - minCust + 1) + minCust); 
