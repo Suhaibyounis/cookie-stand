@@ -129,11 +129,7 @@ SalmonStand.prototype.render = function(){
     h1Element.textContent = this.City;
       
     
-
     // Table
-   
-
-
     // Table layout
     const rowElement = document.createElement('tr');
     tableElement.appendChild(rowElement);
@@ -154,8 +150,6 @@ SalmonStand.prototype.render = function(){
     const thElement = document.createElement('th');
     rowElement.appendChild(thElement);
     thElement.textContent = this.total; 
-
-  
     
 };
 
