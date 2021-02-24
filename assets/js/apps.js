@@ -2,6 +2,7 @@
 let workingHours = ['6am', '7am', '8am', '9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
 let dailyLocationTotal =[];
+SalmonStand.allCity=[];
 
 const table = document.getElementById('table'), totalPerHour =0;
 
@@ -33,7 +34,7 @@ function SalmonStand (city, minCust, maxCust, avgCookies){
     this.custPerHour = [];
     this.avgCookies = avgCookies;
     this.total = 0;
-    
+    SalmonStand.allCity.push(this);
 
 };
 
@@ -98,27 +99,48 @@ SalmonStand.prototype.render = function(){
     const tr8Element = document.createElement('tr');
     tableElement.appendChild(tr8Element);
 
+    // tr8Element.classList.add("Tablefooter");
+
+
     const th21Element = document.createElement('th');
     tr8Element.appendChild( th21Element );
     th21Element.textContent = 'total';
     //
+    // for( let i = 0; i < workingHours.length; i++ ){
+    //   const th20Element = document.createElement('th');
+    //   tr8Element.appendChild( th20Element );
+    //   th20Element.textContent = Seattle.numOfCookies[i] + Tokyo.numOfCookies[i] + Dubai.numOfCookies[i]
+    //    + Paris.numOfCookies[i] + Lima.numOfCookies[i];
+    // }
+    
     for( let i = 0; i < workingHours.length; i++ ){
-      const th20Element = document.createElement('th');
-      tr8Element.appendChild( th20Element );
-      th20Element.textContent = Seattle.numOfCookies[i] + Tokyo.numOfCookies[i] + Dubai.numOfCookies[i]
-       + Paris.numOfCookies[i] + Lima.numOfCookies[i];
+      const thElement = document.createElement( 'th' );
+      tr8Element.appendChild( thElement );
+      // thElement.textContent = seattle.NumberOfCookiesPerHour[i] + tokyo.NumberOfCookiesPerHour[i] + dubai.NumberOfCookiesPerHour[i] + paris.NumberOfCookiesPerHour[i] + lima.NumberOfCookiesPerHour[i];
+      let dailyHourTotalAllShops = 0;
+      for ( let j = 0; j < SalmonStand.allCity.length; j++ ) {
+        // console.log( Shop.allShop[j].NumberOfCookiesPerHour[i] );
+        dailyHourTotalAllShops += SalmonStand.allCity[j].numOfCookies[i];
+      }
+      // console.log( dailyHourTotalAllShops );
+      thElement.textContent = dailyHourTotalAllShops;
     }
-    // calculate the total of the Daily Location Total
-    let totals = 0;
-    for ( let i = 0; i < dailyLocationTotal.length; i++){
-      totals += dailyLocationTotal[i];
-    }
-    const th23Element = document.createElement('th');
-    tr8Element.appendChild( th23Element );
-    th23Element.textContent = totals;
-  }
+
+  
+   // calculate the total of the Daily Location Total
+   let totals = 0;
+   for ( let i = 0; i < dailyLocationTotal.length; i++){
+     totals += dailyLocationTotal[i];
+   }
+   const th23Element = document.createElement('th');
+   tr8Element.appendChild( th23Element );
+   th23Element.textContent = totals;
+ }
 
  
+
+ console.log(SalmonStand.allCity);
+
 const Seattle = new SalmonStand('Seattle', 23, 65,'6.3');
 const Tokyo = new SalmonStand('Tokyo', 3, 24, '1.2')
 const Dubai = new SalmonStand('Dubai', 11, 38, '3.7')
@@ -156,9 +178,6 @@ console.log(Dubai);
 console.log(Paris);
 console.log(Lima);
 
-
-
-
 footerOfTable();
 
 function generateRandomNumber(minCust, maxCust) {
@@ -166,3 +185,30 @@ function generateRandomNumber(minCust, maxCust) {
   }
   
 // console.log(generateRandomNumber(minCust, maxCust))
+
+const formElement = document.getElementById ('addNewCity');
+
+formElement.addEventListener('submit', function(event){
+  
+  event.preventDefault();
+
+  tableElement.removeChild(tableElement.lastChild);
+
+  const cityName = event.target.cityName.value;
+  const minCust =  parseFloat(event.target.minCust.value);
+  const maxCust = parseFloat(event.target.maxCust.value);
+  const avgCookies = parseFloat(event.target.avgCookies.value);
+
+  const cityNameNew = new SalmonStand (cityName,minCust, maxCust, avgCookies)
+
+  cityNameNew.getNumOfCookies();
+  cityNameNew.render();
+  
+  formElement.reset();
+  footerOfTable();
+  console.log(cityName);
+  console.log(minCust);
+  console.log(maxCust);
+}
+);
+
