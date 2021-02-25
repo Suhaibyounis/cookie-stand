@@ -106,12 +106,7 @@ SalmonStand.prototype.render = function(){
     tr8Element.appendChild( th21Element );
     th21Element.textContent = 'total';
     //
-    // for( let i = 0; i < workingHours.length; i++ ){
-    //   const th20Element = document.createElement('th');
-    //   tr8Element.appendChild( th20Element );
-    //   th20Element.textContent = Seattle.numOfCookies[i] + Tokyo.numOfCookies[i] + Dubai.numOfCookies[i]
-    //    + Paris.numOfCookies[i] + Lima.numOfCookies[i];
-    // }
+    
     
     for( let i = 0; i < workingHours.length; i++ ){
       const thElement = document.createElement( 'th' );
