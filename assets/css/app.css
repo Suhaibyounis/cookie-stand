@@ -1,0 +1,69 @@
+*{
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+
+
+td, th {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  th {
+    background: #28527a;
+    color: #f4d160;
+  }
+
+ body {
+    width: 960px;
+    margin: auto;
+    background-color: beige ;
+
+}
+
+
+head title {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
+
+
+header h2 {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
+
+
+#saleshead{
+  width: 960px;
+}
+
+#titleShop{
+  text-align: center;
+  background-color: burlywood;
+  width: 200px;
+  margin-left: 390px;
+  
+}
+
+#addNewCity{
+  width: 960px;
+}
+
+#mainlink{
+  background-color: burlywood;
+  font-size: 25px;
+  margin: 20px 0;
+}
+
+
+
+#saleslink{
+  background-color: burlywood;
+  font-size: 20px
+
+}
