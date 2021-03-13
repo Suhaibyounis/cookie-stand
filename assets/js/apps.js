@@ -133,6 +133,7 @@ function footerOfTable (){
 }
 
 
+
 console.log( SalmonStand.allCity );
 
 const Seattle = new SalmonStand( 'Seattle', 23, 65,'6.3' );
@@ -206,4 +207,3 @@ formElement.addEventListener( 'submit', function( event ){
 }
 
 );
-
