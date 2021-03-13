@@ -111,7 +111,7 @@ function footerOfTable (){
   for( let i = 0; i < workingHours.length; i++ ){
     const thElement = document.createElement( 'th' );
     tr8Element.appendChild( thElement );
-    // thElement.textContent = seattle.NumberOfCookiesPerHour[i] + tokyo.NumberOfCookiesPerHour[i] + dubai.NumberOfCookiesPerHour[i] + paris.NumberOfCookiesPerHour[i] + lima.NumberOfCookiesPerHour[i];
+
     let dailyHourTotalAllShops = 0;
     for ( let j = 0; j < SalmonStand.allCity.length; j++ ) {
       // console.log( Shop.allShop[j].NumberOfCookiesPerHour[i] );
