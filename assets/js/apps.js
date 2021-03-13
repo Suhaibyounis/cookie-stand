@@ -200,13 +200,9 @@ formElement.addEventListener( 'submit', function( event ){
   cityNameNew.render();
 
   formElement.reset();
-
   footerOfTable();
-
   console.log( cityName );
   console.log( minCust );
   console.log( maxCust );
 }
-
-
 );
