@@ -99,6 +99,8 @@ function footerOfTable (){
   const tr8Element = document.createElement( 'tr' );
   tableElement.appendChild( tr8Element );
 
+  // tr8Element.classList.add("Tablefooter");
+
 
   const th21Element = document.createElement( 'th' );
   tr8Element.appendChild( th21Element );
@@ -109,7 +111,7 @@ function footerOfTable (){
   for( let i = 0; i < workingHours.length; i++ ){
     const thElement = document.createElement( 'th' );
     tr8Element.appendChild( thElement );
-
+    // thElement.textContent = seattle.NumberOfCookiesPerHour[i] + tokyo.NumberOfCookiesPerHour[i] + dubai.NumberOfCookiesPerHour[i] + paris.NumberOfCookiesPerHour[i] + lima.NumberOfCookiesPerHour[i];
     let dailyHourTotalAllShops = 0;
     for ( let j = 0; j < SalmonStand.allCity.length; j++ ) {
       // console.log( Shop.allShop[j].NumberOfCookiesPerHour[i] );
@@ -158,18 +160,18 @@ Dubai.render();
 Paris.render();
 Lima.render();
 
-// console.log( Seattle.numOfCookies );
-// console.log( Tokyo.numOfCookies );
-// console.log( Dubai.numOfCookies );
-// console.log( Paris.numOfCookies );
-// console.log( Lima.numOfCookies );
+console.log( Seattle.numOfCookies );
+console.log( Tokyo.numOfCookies );
+console.log( Dubai.numOfCookies );
+console.log( Paris.numOfCookies );
+console.log( Lima.numOfCookies );
 
 
-// console.log( Seattle );
-// console.log( Tokyo );
-// console.log( Dubai );
-// console.log( Paris );
-// console.log( Lima );
+console.log( Seattle );
+console.log( Tokyo );
+console.log( Dubai );
+console.log( Paris );
+console.log( Lima );
 
 footerOfTable();
 
